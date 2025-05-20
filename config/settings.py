@@ -12,12 +12,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
-
-# .env 파일 로드 (존재하는 경우)
-env_path = Path(__file__).resolve().parent.parent / '.env'
-if env_path.exists():
-    load_dotenv(env_path)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,18 +22,12 @@ STATICFILES_DIRS = [
 ]
 
 # 개발 환경에서는 하드코딩된 키 사용, 프로덕션에서는 환경 변수 사용
-import os
-from django.core.management.utils import get_random_secret_key
-
-# 개발 환경에서는 하드코딩된 키 사용, 프로덕션에서는 환경 변수 사용
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-a^3=vq=*a+u*)sagi%5kr9^$gmgl379y5)9q=a%_f*b6$9)$vx')
-
-# Google Maps API 키도 환경 변수로 관리
-GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY', '')
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-a^3=vq=*a+u*)sagi%5kr9^$gmgl379y5)9q=a%_f*b6$9)$vx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# 환경 변수가 없으면 기본값으로 True 사용 (개발 환경)
-DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 # settings.py
 ALLOWED_HOSTS = ['192.168.0.205', 'localhost', '127.0.0.1']
@@ -78,7 +66,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'web.context_processors.google_maps_api_key',  # 추가된 context processor
             ],
         },
     },

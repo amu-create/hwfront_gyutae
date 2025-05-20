@@ -45,19 +45,12 @@ AI Trainer는 Django 기반의 피트니스 웹 애플리케이션입니다. 사
    python manage.py runserver
    ```
 
-## 환경 변수 설정 (필수)
+## 환경 변수 설정 (선택 사항)
 
-보안을 위해 다음과 같이 환경 변수를 설정해야 합니다:
+보안을 위해 환경 변수 설정을 권장합니다:
 
-1. `.env.example` 파일을 복사하여 `.env` 파일 생성
-   ```bash
-   cp .env.example .env
-   ```
-
-2. `.env` 파일에서 다음 환경 변수를 설정:
-   - `DJANGO_SECRET_KEY`: Django 비밀키
-   - `DJANGO_DEBUG`: 디버그 모드 설정 ('True' 또는 'False')
-   - `GOOGLE_MAPS_API_KEY`: Google Maps API 키 (Google Cloud Console에서 새로 발급 받아야 함)
+- `DJANGO_SECRET_KEY`: Django 비밀키
+- `DJANGO_DEBUG`: 디버그 모드 설정 ('True' 또는 'False')
 
 ## 라이선스
 
