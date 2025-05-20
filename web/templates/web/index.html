@@ -867,7 +867,13 @@
         </div>
       </div>
         <div class="col-lg-8 side-features">
-        <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6045.3003145248895!2d-73.9884657!3d40.7477229!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9ac1f1b85%3A0x7e33d1c0e7af3be4!2zMzUwIDV0aCBBdmUsIE5ldyBZb3JrLCBOWSAxMDExOCwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1689597362021!5m2!1sen!2sen" allowfullscreen=""></iframe></div>
+        <div class="google-map">
+    <!-- 환경 변수를 통해 API 키를 안전하게 관리 -->
+    <iframe frameborder="0" style="border:0" 
+        src="https://www.google.com/maps/embed/v1/place?key={{ GOOGLE_MAPS_API_KEY }}&q=350+5th+Ave,New+York,NY+10118,USA" 
+        allowfullscreen="">
+    </iframe>
+</div>
       </div>
     </div>
   </div>
