@@ -35,7 +35,8 @@ from django.core.management.utils import get_random_secret_key
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-a^3=vq=*a+u*)sagi%5kr9^$gmgl379y5)9q=a%_f*b6$9)$vx')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# 환경 변수가 없으면 기본값으로 True 사용 (개발 환경)
+DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
 
 # settings.py
 ALLOWED_HOSTS = ['192.168.0.205', 'localhost', '127.0.0.1']
